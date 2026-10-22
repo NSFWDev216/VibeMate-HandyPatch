@@ -1,0 +1,123 @@
+{
+  "action": {},
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "commands": {
+    "_execute_action": {
+      "description": "Start the extension",
+      "suggested_key": {
+        "default": "Ctrl+M"
+      }
+    }
+  },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "js": [
+        "content-scripts/camsite.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    },
+    {
+      "all_frames": true,
+      "exclude_matches": [
+        "*://*.fanberry.com/extension/*/background.html*",
+        "*://*.fanberry.com/extension/*/sidepanel.html*"
+      ],
+      "js": [
+        "content-scripts/common.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "js": [
+        "content-scripts/site.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.fanberry.com/extension/*/connect.html*",
+        "*://*.vibemate.com/extension/*/connect.html*"
+      ],
+      "js": [
+        "handy/handy-patch.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": false
+    }
+  ],
+  "description": "A tool for viewers to enjoy a smoother livestream experience. Try it on YouTube or your favorite livestream sites!",
+  "externally_connectable": {
+    "matches": [
+      "*://*.fanberry.com/*",
+      "*://*.vibemate.com/*"
+    ]
+  },
+  "host_permissions": [
+    "*://*.stripchat.com/*"
+  ],
+  "icons": {
+    "128": "icons/128.png",
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "48": "icons/48.png"
+  },
+  "incognito": "split",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlcAnlBjxApCl7iGCoGmNF6oyD/z7M7zF+1ZUWBIC14gAnhR68bTqCpgW4GIK9zcKI3NupUoHW9F2CUdBAfw9q34rUBDabnqmZ97ZMMFsQJ3hFb0rErTzStsNWHGM0bOfIQDvaYV/mMI4SlTY4jhE043RHeiUIZ/l98noPk8Hm7s1iomCiG/KEMSSuvE+lVKWqrfNkuBjtQIBUKdn4WOplyKZFLnu/9eKmWofYhigR7gttdeYcuT1xWeKAc/4WCtulx6inTvu3qehfP6t26Y5JRxaFu4gkQeb6vD8D3WlQmvnIwA4Bk7cBSI/M6F4GUE6jhQ1tFNo0ItKTh5cVH0VhwIDAQAB",
+  "manifest_version": 3,
+  "minimum_chrome_version": "118",
+  "name": "VibeMate (Handy)",
+  "permissions": [
+    "offscreen",
+    "sidePanel",
+    "storage",
+    "tabs",
+    "commands",
+    "notifications"
+  ],
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "version": "1.5.7",
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "resources": [
+        "base.js",
+        "fonts/*",
+        "icons/logo.png",
+        "content-scripts/*.css"
+      ]
+    },
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "resources": [
+        "content-scripts/camsite.css"
+      ]
+    },
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "resources": [
+        "content-scripts/site.css"
+      ]
+    }
+  ]
+}

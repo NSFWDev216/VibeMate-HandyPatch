@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VibeMate Side Panel</title>
+  <meta name="manifest.default_title" content="VibeMate Side Panel">
+  <!-- <meta name="manifest.default_icon" content="{ '16': '/icon/16.png' }" /> -->
+  <style>
+    body {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      background-color: rgb(18, 18, 18);
+    }
+
+    @keyframes loading {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .pre-loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 999999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(18, 18, 18, 0.5);
+      backdrop-filter: blur(20px);
+    }
+
+    .pre-loading .pre-loading-warp {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pre-loading .pre-loading-icon {
+      fill: #ffffff;
+      font-size: 42px;
+      width: 42px;
+      height: 42px;
+      animation: loading 1s linear infinite;
+    }
+
+    .pre-loading .pre-loading-text {
+      margin-top: 12px;
+      padding: 0 50px;
+      text-align: center;
+      color: #ffffff;
+    }
+  </style>
+  <script type="module" crossorigin src="/chunks/sidepanel-DCfL4AsR.js"></script>
+  <link rel="modulepreload" crossorigin href="/chunks/_virtual_wxt-plugins-Vf6cH492.js">
+  <link rel="modulepreload" crossorigin href="/chunks/pageMessage-aGGF2Efh.js">
+  <link rel="modulepreload" crossorigin href="/chunks/index-Ct4J2CFZ.js">
+  <link rel="stylesheet" crossorigin href="/assets/sidepanel-BnSsFx2t.css">
+</head>
+
+<body>
+  <div class="pre-loading">
+    <div class="pre-loading-warp">
+      <svg t="1725076847246" class="pre-loading-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="9749" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200">
+        <path d="M970.229374 495.328185C963.472589 234.667019 750.210521 25.401445 487.923663 25.401445 229.709504 25.401445 18.852106 228.189651 5.92277 483.194761 18.877507 214.159586 241.080884 0 513.325109 0 789.642031 0 1014.267013 220.636954 1021.032264 495.328185L970.229374 495.328185Z" p-id="9750" />
+        <path d="M734.368486 971.825431 705.165291 912.572326C853.374258 835.707553 956.470257 682.807786 961.237262 504.10015 968.231127 242.312855 761.691974 24.43619 499.913146 17.442326 423.454795 15.401743 350.806661 31.68407 285.999107 62.123468L285.177794 60.446973C317.192082 44.63034 351.306223 31.870347 387.359341 22.844367 659.544295-45.239974 935.395525 120.208107 1003.488333 392.401528 1062.724503 629.193802 945.158147 868.695563 734.368486 971.825431Z" p-id="9751" />
+        <path d="M749.685558 959.844416C542.172684 1068.909755 293.755015 1020.011973 141.464883 856.164183 126.147811 849.788421 115.369131 834.708429 115.369131 817.079826 115.369131 793.702029 134.327077 774.744084 157.704874 774.744084 173.081215 774.744084 186.408507 783.024955 193.825729 795.285386L195.299013 794.006846C303.416031 906.628388 465.621194 962.316823 629.45205 927.042683 880.816286 872.92067 1040.709917 625.273512 986.587905 373.909276 971.152293 302.209463 939.916982 237.986142 897.394963 184.016537L900.51934 181.298583C924.18502 209.223238 945.285154 240.035192 963.02383 273.785245 1093.561858 522.152111 998.043956 829.306388 749.685558 959.844416Z" p-id="9752" />
+      </svg>
+    </div>
+  </div>
+  
+</body>
+
+</html>
